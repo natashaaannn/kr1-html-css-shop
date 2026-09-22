@@ -114,7 +114,11 @@ footer {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 /* Блок навигации */
+=======
+/* Навигационное меню оформляем через Flexbox */
+>>>>>>> main
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
@@ -126,7 +130,12 @@ footer {
   list-style: none;
 }
 
+<<<<<<< HEAD
 .site-nav__link {
+=======
+/* Ссылки меню делаем крупными и кликабельными флекс-элементами */
+.site-nav__list a {
+>>>>>>> main
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
@@ -134,6 +143,7 @@ footer {
   border-radius: var(--radius-sm);
 }
 
+<<<<<<< HEAD
 .site-nav__link:hover {
   color: var(--color-white);
   background-color: var(--color-primary);
@@ -145,6 +155,9 @@ footer {
 }
 
 .site-nav__link--active {
+=======
+.site-nav__list a:hover {
+>>>>>>> main
   color: var(--color-white);
   background-color: var(--color-primary);
 }
@@ -172,22 +185,34 @@ footer {
   margin-top: 0;
 }
 
+<<<<<<< HEAD
 .section__list {
   margin-bottom: 0;
 }
 
 /* Блок сетки товаров */
+=======
+/* Сетка карточек товаров через CSS Grid из 3 равных колонок */
+>>>>>>> main
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
 
+<<<<<<< HEAD
 /* Блок карточки товара */
+=======
+/* Сама карточка товара становится флекс-контейнером с выравниванием сверху вниз */
+>>>>>>> main
 .product-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+<<<<<<< HEAD
+=======
+  margin-bottom: 0;
+>>>>>>> main
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -207,6 +232,7 @@ footer {
   border-color: var(--color-danger);
 }
 
+<<<<<<< HEAD
 .product-card__title {
   margin: 0;
   color: var(--color-text);
@@ -227,10 +253,15 @@ footer {
 }
 
 .product-card__button {
+=======
+/* Прижимаем кнопку к самому низу карточки вне зависимости от длины текста описания */
+.product-card .button {
+>>>>>>> main
   margin-top: auto;
   align-self: flex-start;
 }
 
+<<<<<<< HEAD
 /* Блок хлебных крошек */
 .breadcrumbs {
   max-width: var(--container-width);
@@ -254,6 +285,8 @@ footer {
 }
 
 /* Блок боковой панели */
+=======
+>>>>>>> main
 .aside-info {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
@@ -418,4 +451,56 @@ html {
   padding: var(--space-md);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
+}
+
+/* Макет страницы каталога «фильтры + товары» через именованные области CSS Grid */
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+}
+
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+/* Внутренняя форма бокового блока фильтров тоже использует Grid раскладку */
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
 }
