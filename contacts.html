@@ -19,11 +19,10 @@
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html">Контакты</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Правила Хэллоуина</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html#feedback-section">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
@@ -35,26 +34,69 @@
       <span class="breadcrumbs__current">Контакты</span>
     </nav>
     
-    <!-- Блок контактов в виде стильной хэллоуинской карточки -->
-    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
+    <!-- Карточка 1: Чистые Контакты -->
+    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl); text-align: left;">
       <h1 class="section__title" style="color: var(--color-primary); margin-top: 0; text-transform: uppercase;">🔮 НАШИ КОНТАКТЫ</h1>
       <p style="color: #ffdbb5; line-height: 1.6; margin-bottom: var(--space-md);">
         Остались вопросы по ассортименту или хотите обсудить индивидуальный заказ декора для масштабного мероприятия? Свяжитесь с нашей ведьминской службой поддержки любым удобным способом:
       </p>
-      <ul class="section__list" style="color: #ffdbb5; line-height: 2;">
-        <li>Телефон: +7 (495) 666-13-14</li>
-        <li>Электронная почта: support@spookyshop.ru</li>
-        <li>Адрес шоурума: г. Москва, Проспект Вернадского, д. 26</li>
+      <ul class="section__list" style="color: #ffdbb5; line-height: 2; list-style-type: none; padding-left: 0;">
+        <li>📞 <strong>Телефон:</strong> +7 (495) 666-13-14</li>
+        <li>✉️ <strong>Электронная почта:</strong> support@spookyshop.ru</li>
+        <li>📍 <strong>Адрес:</strong> г. Москва, Проспект Вернадского, д. 26</li>
       </ul>
     </section>
     
-    <!-- Блок обратной связи -->
-    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
-      <h2 class="section__title" style="color: var(--color-primary); margin-top: 0; text-transform: uppercase;">🦇 ОБРАТНАЯ СВЯЗЬ</h2>
-      <p style="color: #ffdbb5; line-height: 1.6; margin-bottom: var(--space-lg);">
-        Для отправки мгновенной заявки на покупку костюма или бронирование декора используйте нашу удобную интерактивную форму в модальном окне на Главной странице сайта.
-      </p>
-      <a class="button button--primary" href="index.html#contacts">Перейти к форме</a>
+    <!-- Карточка 2: Полноценное окно с заявками (Обратная связь как на фото F1) -->
+    <section class="section" id="feedback-section" style="background-color: var(--color-surface-card); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl); scroll-margin-top: 100px;">
+      <h2 class="section__title" style="color: var(--color-primary); margin-top: 0; text-transform: uppercase; margin-bottom: var(--space-xl); text-align: left;">🦇 ОБРАТНАЯ СВЯЗЬ</h2>
+      
+      <form class="order-form" action="#" method="post" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
+        
+        <!-- Поле: Ваше имя -->
+        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+          <label class="order-form__label" for="feedback-name" style="color: #ffffff; font-weight: 700; font-size: 14px;">Ваше имя</label>
+          <input class="order-form__input" id="feedback-name" type="text" name="name" placeholder="Иван Иванов" required 
+                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box;">
+        </div>
+
+        <!-- Поле: Контактный E-mail -->
+        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+          <label class="order-form__label" for="feedback-email" style="color: #ffffff; font-weight: 700; font-size: 14px;">Контактный E-mail</label>
+          <input class="order-form__input" id="feedback-email" type="email" name="email" placeholder="name@domain.ru" required
+                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box;">
+        </div>
+
+        <!-- Поле: Цель обращения -->
+        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+          <label class="order-form__label" for="feedback-subject" style="color: #ffffff; font-weight: 700; font-size: 14px;">Цель обращения</label>
+          <select class="order-form__select" id="feedback-subject" name="subject" 
+                  style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; cursor: pointer;">
+            <option value="support">Техническая поддержка портала</option>
+            <option value="order">Вопрос по заказу декора</option>
+            <option value="cooperation">Сотрудничество и реклама</option>
+          </select>
+        </div>
+
+        <!-- Поле: Текст сообщения -->
+        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
+          <label class="order-form__label" for="feedback-message" style="color: #ffffff; font-weight: 700; font-size: 14px;">Текст сообщения</label>
+          <textarea class="order-form__textarea" id="feedback-message" name="message" rows="5" placeholder="Опишите ваш запрос..." required
+                    style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <!-- Чекбокс согласия -->
+        <div class="order-form__field-checkbox" style="display: flex; align-items: center; gap: 10px; margin-top: 5px; margin-bottom: 5px;">
+          <input class="order-form__checkbox" id="feedback-agreement" name="agreement" type="checkbox" required style="margin: 0; cursor: pointer; width: auto !important;">
+          <label class="order-form__label" for="feedback-agreement" style="color: #ffdbb5; font-size: 14px; cursor: pointer; margin: 0; text-align: left;">Я согласен на обработку персональных данных</label>
+        </div>
+
+        <!-- Кнопка отправки на всю ширину -->
+        <button class="button button--primary" type="submit" style="width: 100%; padding: 14px; font-size: 16px; letter-spacing: 1px;">
+          ОТПРАВИТЬ ЗАПРОС 🔮
+        </button>
+
+      </form>
     </section>
   </main>
 
