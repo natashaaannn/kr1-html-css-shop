@@ -540,3 +540,35 @@ html {
 .catalog-products {
   grid-area: products;
 }
+
+/* Исправление размеров полей в модальном окне заявки */
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  max-width: 100%;
+}
+
+/* Запрещаем полю комментария растягивать окно вбок */
+.order-form textarea {
+  resize: vertical;
+}
+
+/* Выравнивание галочки и текста согласия в одну строчку */
+.order-form__field--checkbox,
+.order-form__field-checkbox {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--space-sm, 10px) !important;
+  margin-bottom: var(--space-md, 15px) !important;
+  color: #000000;
+}
+
+/* Убираем лишние внешние отступы у самой галочки, чтобы она не прыгала */
+.order-form__field--checkbox input,
+.order-form__field-checkbox input {
+  margin: 0 !important;
+  cursor: pointer;
+}
