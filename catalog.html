@@ -3,25 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
+  <meta name="description" content="Каталог праздничного декора и костюмов на Хэллоуин в SpookyShop.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Каталог товаров — Учебный интернет-магазин">
-  <meta property="og:description" content="Каталог товаров учебного интернет-магазина.">
+  <meta property="og:title" content="Каталог — SpookyShop">
+  <meta property="og:description" content="Найдите идеальные товары для незабываемой мистической ночи.">
   <meta property="og:image" content="https://github.io">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <title>Каталог — SpookyShop</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <a class="site-header__logo" href="index.html">SpookyShop</a>
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Правила Хэллоуина</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
         </ul>
@@ -29,81 +29,266 @@
     </div>
   </header>
 
-  <main>
+  <main class="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Каталог</span>
     </nav>
     
-    <section class="section">
-      <h1 class="section__title">Каталог товаров</h1>
-      <p class="section__text">
-        На этой странице представлен учебный каталог товаров.
-        В дальнейшем здесь будут добавлены фильтры, сортировка и более
-        подробные карточки.
+    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
+      <h1 class="section__title" style="color: var(--color-primary); margin-top: 0;">КАТАЛОГ ТОВАРОВ</h1>
+      <p style="color: #ffdbb5; margin-bottom: 0; line-height: 1.6;">
+        Добро пожаловать в нашу полную жуткую коллекцию! Здесь собраны лучшие костюмы, декорации ручной работы и сладости для идеальной хэллоуинской вечеринки.
       </p>
     </section>
     
-    <section class="catalog-layout">
+    <div class="catalog-layout">
+      <!-- Левая колонка: Расширенные фильтры -->
       <aside class="catalog-filters">
-        <h2 class="catalog-filters__title">Фильтры</h2>
-        <form class="filters-form" action="#" method="get">
-          <fieldset class="filters-form__fieldset">
-            <legend class="filters-form__legend">Категория</legend>
-            <label class="filters-form__label">
-              <input class="filters-form__checkbox" type="checkbox" name="category" value="all">
-              Все товары
-            </label>
-            <label class="filters-form__label">
-              <input class="filters-form__checkbox" type="checkbox" name="category" value="popular">
-              Популярные
-            </label>
-            <label class="filters-form__label">
-              <input class="filters-form__checkbox" type="checkbox" name="category" value="new">
-              Новинки
-            </label>
+        <h2 class="catalog-filters__title" style="color: var(--color-primary); font-size: 20px; margin-top: 0;">Фильтры</h2>
+        <form class="filters-form" action="#" method="get" style="color: #ffdbb5;">
+          
+          <!-- Новые фильтры по категориям товаров -->
+          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
+            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Тип товара</legend>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="costumes"> Костюмы и маски</label>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="decor"> Декор и освещение</label>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="makeup"> Грим и эффекты</label>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="sweets"> Игры и сладости</label>
           </fieldset>
-          <fieldset class="filters-form__fieldset">
-            <legend class="filters-form__legend">Цена</legend>
-            <label class="filters-form__label" for="price-from">От</label>
-            <input class="filters-form__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
-            <label class="filters-form__label" for="price-to">До</label>
-            <input class="filters-form__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+
+          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
+            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Статус</legend>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="hit"> Хиты продаж</label>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="new"> Новинки</label>
+            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="discount"> Со скидкой</label>
           </fieldset>
-          <button class="button button--primary" type="submit">Применить</button>
+          
+          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
+            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Цена (руб.)</legend>
+            <label for="price-from" style="display:block; margin-top: var(--space-xs);">От</label>
+            <input class="filters-form__input" id="price-from" type="number" placeholder="0" style="background: #1a1a1a; color: #fff; border: 1px solid var(--color-border); padding: var(--space-xs); width: 100%; border-radius: var(--radius-sm);">
+            <label for="price-to" style="display:block; margin-top: var(--space-sm);">До</label>
+            <input class="filters-form__input" id="price-to" type="number" placeholder="5000" style="background: #1a1a1a; color: #fff; border: 1px solid var(--color-border); padding: var(--space-xs); width: 100%; border-radius: var(--radius-sm);">
+          </fieldset>
+          <button class="button button--primary" type="submit" style="width: 100%;">Применить</button>
         </form>
       </aside>
       
+      <!-- Правая колонка: ПЕРЕМЕШАННАЯ сетка из 18 товаров -->
       <section class="catalog-products">
-        <h2 class="catalog-products__title">Список товаров</h2>
+        <h2 class="catalog-products__title" style="display: none;">Товары</h2>
         <div class="products-grid">
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+          
+          <!-- 1. Маска Крика -->
+          <article class="product-card product-card--vampire">
+            <span class="product-card__badge product-card__badge--hit">ТОП</span>
+            <span class="product-card__category">Маски</span>
+            <img class="product-card__image" src="images/scream.jpg" alt="Маска Крика">
+            <h3 class="product-card__title">Хоррор-маска Ghostface</h3>
+            <p class="product-card__description">Знаменитая качественная латексная маска маньяка Крик с реалистичным тканевым капюшоном черного цвета.</p>
+            <p class="product-card__price">Цена: 990 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
-          <article class="product-card product-card--discount">
-            <h3 class="product-card__title">Товар 2 (Со скидкой)</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+
+          <!-- 2. Костюм скелета -->
+          <article class="product-card product-card--skeleton">
+            <span class="product-card__badge product-card__badge--hit">ХИТ</span>
+            <span class="product-card__category">Костюмы</span>
+            <img class="product-card__image" src="images/skeleton.png" alt="Костюм скелета">
+            <h3 class="product-card__title">Костюм скелета</h3>
+            <p class="product-card__description">Премиальный облегающий комбинезон со зловещим анатомическим принтом костей, который ярко светится в полной темноте.</p>
+            <p class="product-card__price">Цена: 2 990 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
+
+          <!-- 3. Набор шариков Хеллоуин -->
+          <article class="product-card product-card--pumpkin">
+            <span class="product-card__badge product-card__badge--hit">ХИТ</span>
+            <span class="product-card__category">Декор</span>
+            <img class="product-card__image" src="images/balloon.png" alt="Набор шариков Хеллоуин">
+            <h3 class="product-card__title">Набор шариков Хеллоуин</h3>
+            <p class="product-card__description">Набор из 15 прочных латексных шаров оранжевого и черного цвета с принтами летучих мышей и тыкв.</p>
+            <p class="product-card__price">Цена: 590 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 4. Костюм привидения -->
+          <article class="product-card product-card--ghost">
+            <span class="product-card__category">Костюмы</span>
+            <img class="product-card__image" src="images/ghost.png" alt="Костюм привидения">
+            <h3 class="product-card__title">Костюм привидения</h3>
+            <p class="product-card__description">Легкая полупрозрачная струящаяся мантия белого цвета со скрывающей лицо маской-вуалью для создания мистического образа.</p>
+            <p class="product-card__price">Цена: 1 890 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+                    <!-- 5. Ведьмина метла -->
+          <article class="product-card product-card--witch">
+            <span class="product-card__badge product-card__badge--hit">NEW</span>
+            <span class="product-card__category">Аксессуары</span>
+            <img class="product-card__image" src="images/broom.jpg" alt="Ведьмина метла">
+            <h3 class="product-card__title">Ведьмина метла</h3>
+            <p class="product-card__description">Декоративная метла из натуральных прутьев с атласной фиолетовой лентой. Идеальное дополнение к костюму.</p>
+            <p class="product-card__price">Цена: 1 290 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 6. Костюм вампира -->
+          <article class="product-card product-card--vampire">
+            <span class="product-card__badge product-card__badge--hit">ТОП</span>
+            <span class="product-card__category">Костюмы</span>
+            <img class="product-card__image" src="images/vampire.png" alt="Костюм вампира">
+            <h3 class="product-card__title">Костюм вампира</h3>
+            <p class="product-card__description">Роскошный готический комплект из длинного атласного плаща с багровой подкладкой, жилета и классического высокого воротника.</p>
+            <p class="product-card__price">Цена: 3 890 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 7. Скатерть тематическая -->
+          <article class="product-card product-card--witch">
+            <span class="product-card__category">Декор</span>
+            <img class="product-card__image" src="images/tablecloth.jpg" alt="Скатерть тематическая">
+            <h3 class="product-card__title">Скатерть тематическая</h3>
+            <p class="product-card__description">Водонепроницаемая праздничная скатерть с готическим узором из паутины и заброшенных замков для стола.</p>
+            <p class="product-card__price">Цена: 790 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 8. Шляпа ведьмы -->
+          <article class="product-card product-card--witch">
+            <span class="product-card__badge product-card__badge--discount">-10%</span>
+            <span class="product-card__category">Аксессуары</span>
+            <img class="product-card__image" src="images/witch.png" alt="Шляпа ведьмы">
+            <h3 class="product-card__title">Шляпа ведьмы</h3>
+            <p class="product-card__description">Остроконечная черная фетровая шляпа с вуалью из кружева и искусственными розами.</p>
+            <p class="product-card__price">Цена: 1 190 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 9. Сумочки для конфет -->
+          <article class="product-card product-card--pumpkin">
+            <span class="product-card__badge product-card__badge--discount">-10%</span>
+            <span class="product-card__category">Аксессуары</span>
+            <img class="product-card__image" src="images/bag.jpg" alt="Сумочки для конфет">
+            <h3 class="product-card__title">Сумочки для конфет (3 шт)</h3>
+            <p class="product-card__description">Фетровые сумочки-мешки с удобной ручкой в форме тыкв для сбора сладостей «Кошелек или жизнь».</p>
+            <p class="product-card__price">Цена: 450 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 10. Тыква Джек LED -->
+          <article class="product-card product-card--pumpkin">
+            <span class="product-card__badge product-card__badge--hit">NEW</span>
+            <span class="product-card__category">Декор</span>
+            <img class="product-card__image" src="images/pumpkin.png" alt="Тыква Джек">
+            <h3 class="product-card__title">Тыква Джек LED</h3>
+            <p class="product-card__description">Большая керамическая тыква-светильник с вырезанной зловещей ухмылкой и мерцающим огнем.</p>
+            <p class="product-card__price">Цена: 1 590 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 11. Игрушка мягкая паук -->
+          <article class="product-card product-card--garland">
+            <span class="product-card__category">Бутафория</span>
+            <img class="product-card__image" src="images/spider.jpg" alt="Игрушка мягкая паук">
+            <h3 class="product-card__title">Игрушка мягкая паук</h3>
+            <p class="product-card__description">Большой мохнатый паук с гибкими лапками, которые можно гнуть в любую сторону для жутких пранков.</p>
+            <p class="product-card__price">Цена: 890 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 12. Тюбик искусственной крови -->
+          <article class="product-card product-card--blood">
+            <span class="product-card__category">Грим</span>
+            <img class="product-card__image" src="images/blood.png" alt="Искусственная кровь">
+            <h3 class="product-card__title">Тюбик искусственной крови</h3>
+            <p class="product-card__description">Густая реалистичная театральная кровь для создания спецэффектов и грима. Смывается водой.</p>
+            <p class="product-card__price">Цена: 490 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 13. Набор леденцов -->
+          <article class="product-card product-card--blood">
+            <span class="product-card__badge product-card__badge--hit">ХИТ</span>
+            <span class="product-card__category">Сладости</span>
+            <img class="product-card__image" src="images/candy.jpg" alt="Набор леденцов">
+            <h3 class="product-card__title">Набор леденцов Spooky Candy</h3>
+            <p class="product-card__description">Тематическое triо фигурных леденцов ручной работы на палочке: белая косточка, черный паук и оранжевая тыква.</p>
+            <p class="product-card__price">Цена: 350 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 14. Жуткие свечи-призраки -->
+          <article class="product-card product-card--candles">
+            <span class="product-card__badge product-card__badge--discount">-20%</span>
+            <span class="product-card__category">Декор</span>
+            <img class="product-card__image" src="images/candle.png" alt="Свечи-призраки">
+            <h3 class="product-card__title">Жуткие свечи-призраки</h3>
+            <p class="product-card__description">Набор из 3 соевых ароматических свечей, выполненных в форме парящих привидений.</p>
+            <p class="product-card__price">Цена: 1 290 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 15. Клыки вампира -->
+          <article class="product-card product-card--vampire">
+            <span class="product-card__category">Грим</span>
+            <img class="product-card__image" src="images/fangs.jpg" alt="Клыки вампира">
+            <h3 class="product-card__title">Клыки вампира с термоклеем</h3>
+            <p class="product-card__description">Реалистичные полимерные клыки. В комплекте идет безопасный гипоаллергенный клей для быстрой фиксации.</p>
+            <p class="product-card__price">Цена: 490 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 16. Гирлянда Летучие Мыши -->
+          <article class="product-card product-card--garland">
+            <span class="product-card__badge product-card__badge--hit">NEW</span>
+            <span class="product-card__category">Освещение</span>
+            <img class="product-card__image" src="images/garland.png" alt="Гирлянда Летучие Мыши">
+            <h3 class="product-card__title">Гирлянда Летучие Мыши</h3>
+            <p class="product-card__description">3-метровая неоновая гирлянда с 20 светящимися ярко-фиолетовыми летучими мышами.</p>
+            <p class="product-card__price">Цена: 1 390 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+                    <!-- 17. Букет черных готических роз -->
+          <article class="product-card product-card--witch">
+            <span class="product-card__badge product-card__badge--discount">-15%</span>
+            <span class="product-card__category">Декор</span>
+            <img class="product-card__image" src="images/roses.jpg" alt="Черные розы">
+            <h3 class="product-card__title">Букет черных готических роз</h3>
+            <p class="product-card__description">Искусственный изящный букет из 7 черных бархатных роз для украшения праздничного стола или фотозоны.</p>
+            <p class="product-card__price">Цена: 950 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          </article>
+
+          <!-- 18. Настольная игра Хоррор -->
+          <article class="product-card product-card--game">
+            <span class="product-card__badge product-card__badge--discount">-15%</span>
+            <span class="product-card__category">Игры</span>
+            <img class="product-card__image" src="images/game.png" alt="Настольная игра Хоррор">
+            <h3 class="product-card__title">Настольная игра Хоррор</h3>
+            <p class="product-card__description">Атмосферная настольная детективная игра для вечеринки компании от 3 до 8 человек.</p>
+            <p class="product-card__price">Цена: 2 490 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
         </div>
       </section>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer" id="contacts" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
+    <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
+      <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
+      <p style="margin: 0; color: #ffdbb5; font-size: 14px;">Разработчик: Захаркина Наталья Дмитриевна | Группа: ЭФБО-04-25</p>
+    </div>
   </footer>
 
 </body>
 </html>
+
+
+
+
+
+
