@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный frontend-проект internet-магазина.">
+  <meta name="description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный internet-магазин">
   <meta property="og:description" content="Учебный frontend-проект internet-магазина.">
@@ -20,11 +20,10 @@
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Правила Хэллоуина</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html#feedback-section">Обратная связь</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -39,11 +38,9 @@
         чтобы превратить Вашу вечеринку в незабываемый хоррор-перформанс. 
         Успейте заказать до наступления полуночи!
       </p>
-      <a class="button button--primary" href="#popular">Перейти к товарам</a>
     </section>
 
-
-    <section class="section" id="advantages" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+    <section class="section" id="advantages" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
       <h2 class="section__title" style="color: var(--color-primary); margin-top: 0;">🔮 ПРАВИЛА ХЭЛЛОУИНА</h2>
       <ul class="section__list" style="color: var(--color-white); line-height: 1.8;">
         <li>Только оригинальный декор ручной работы</li>
@@ -53,9 +50,7 @@
       </ul>
     </section>
 
-
-
-        <section class="section" id="popular">
+    <section class="section" id="popular">
       <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
         <!-- 1. Костюм скелета -->
@@ -66,9 +61,7 @@
           <h3 class="product-card__title">Костюм скелета</h3>
           <p class="product-card__description">Премиальный облегающий комбинезон со зловещим анатомическим принтом костей, который ярко светится в полной темноте.</p>
           <p class="product-card__price">Цена: 2 990 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Костюм скелета">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 2. Костюм привидения -->
@@ -78,9 +71,7 @@
           <h3 class="product-card__title">Костюм привидения</h3>
           <p class="product-card__description">Легкая полупрозрачная струящаяся мантия белого цвета со скрывающей лицо маской-вуалью для создания мистического образа.</p>
           <p class="product-card__price">Цена: 1 890 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Костюм привидения">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 3. Костюм вампира -->
@@ -91,22 +82,18 @@
           <h3 class="product-card__title">Костюм вампира</h3>
           <p class="product-card__description">Роскошный готический комплект из длинного атласного плаща с багровой подкладкой, жилета и классического высокого воротника.</p>
           <p class="product-card__price">Цена: 3 890 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Костюм вампира">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 4. Шляпа ведьмы -->
         <article class="product-card product-card--witch">
           <span class="product-card__badge product-card__badge--discount">-10%</span>
-          <span class="product-card__category">Аксессуары</span>
+          <span class="product-card__category">Accессуары</span>
           <img class="product-card__image" src="images/witch.png" alt="Шляпа ведьмы">
           <h3 class="product-card__title">Шляпа ведьмы</h3>
           <p class="product-card__description">Остроконечная черная фетровая шляпа с вуалью из кружева и искусственными розами.</p>
           <p class="product-card__price">Цена: 990 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Шляпа ведьмы">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 5. Тыква -->
@@ -117,9 +104,7 @@
           <h3 class="product-card__title">Тыква Джек LED</h3>
           <p class="product-card__description">Большая керамическая тыква-светильник с вырезанной зловещей ухмылкой и мерцающим огнем.</p>
           <p class="product-card__price">Цена: 1 590 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Тыква Джек LED">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 6. Тюбик искусственной крови -->
@@ -129,9 +114,7 @@
           <h3 class="product-card__title">Тюбик искусственной крови</h3>
           <p class="product-card__description">Густая реалистичная театральная кровь для создания спецэффектов и грима. Смывается водой.</p>
           <p class="product-card__price">Цена: 490 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Тюбик искусственной крови">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 7. Свечи -->
@@ -142,9 +125,7 @@
           <h3 class="product-card__title">Жуткие свечи-призраки</h3>
           <p class="product-card__description">Набор из 4 соевых ароматических свечей, выполненных в форме парящих привидений.</p>
           <p class="product-card__price">Цена: 1 290 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Жуткие свечи-призраки">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 8. Фиолетовая гирлянда -->
@@ -155,9 +136,7 @@
           <h3 class="product-card__title">Гирлянда Летучие Мыши</h3>
           <p class="product-card__description">3-метровая неоновая гирлянда с 20 светящимися ярко-фиолетовыми летучими мышами.</p>
           <p class="product-card__price">Цена: 1 390 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Гирлянда Летучие Мыши">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
 
         <!-- 9. Настольная игра -->
@@ -168,87 +147,21 @@
           <h3 class="product-card__title">Настольная игра Хоррор</h3>
           <p class="product-card__description">Атмосферная настольная детективная игра для вечеринки.</p>
           <p class="product-card__price">Цена: 2 490 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Настольная игра Хоррор">
-            Заказать
-          </button>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
         </article>
       </div>
 
-        <aside class="aside-info" style="margin-top: var(--space-xl); margin-bottom: var(--space-xl);">
-      <h2 class="aside-info__title">Служба поддержки SpookyShop</h2>
-      <p class="aside-info__text">
-        Возникли вопросы по подбору карнавального костюма, качеству грима или доставке декора? Наша команда работает круглосуточно, чтобы ваша мистическая вечеринка прошла идеально. Воспользуйтесь удобной формой на нашей <a href="contacts.html" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">странице Контактов</a>!
-      </p>
-    </aside>
+      <aside class="aside-info" style="margin-top: var(--space-xl); margin-bottom: var(--space-xl);">
+        <h2 class="aside-info__title">Служба поддержки SpookyShop</h2>
+        <p class="aside-info__text">
+          Возникли вопросы по подбору карнавального костюма, качеству грима или доставке декора? Наша команда работает круглосуточно, чтобы ваша мистическая вечеринка прошла идеально. Воспользуйтесь удобным разделом на нашей <a href="contacts.html" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">странице Контактов</a>!
+        </p>
+      </aside>
   </main>
 
-  <footer class="site-footer" id="contacts" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
+  <footer class="site-footer" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
     <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
       <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
-      <p style="margin: 0; color: #ffdbb5; font-size: 14px;">Разработчик: Захаркина Наталья Дмитриевна | Группа: ЭФБО-04-25</p>
-    </div>
-  </footer>
-
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
-      </div>
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
-      </div>
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-        <small class="order-form__help">Формат: +7 (900) 000-00-00</small>
-      </div>
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input class="order-form__input" id="order-date" name="date" type="date">
-      </div>
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-      
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-      </div>
-      
-      <!-- Галочка и текст выстроены Flexbox строго в одну линию -->
-      <div class="order-form__field-checkbox" style="display: flex; align-items: center; gap: 10px; margin-top: 15px; margin-bottom: 20px;">
-        <input class="order-form__checkbox" id="order-agreement" name="agreement" type="checkbox" required style="margin: 0; cursor: pointer; width: auto !important;">
-        <label class="order-form__label" for="order-agreement" style="color: #000000; font-weight: 700; cursor: pointer; margin: 0;">Я согласен на обработку персональных данных</label>
-      </div>
-
-      
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-        <button class="button button--primary" type="submit">Отправить заявку</button>
-      </div>
-    </form>
-  </dialog>
-
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
-
-</body>
-</html>
 
 
+      
