@@ -33,6 +33,7 @@
 
 ## Ссылка на опубликованный проект
 Ссылка на репозиторий в GitHub: https://github.com/natashaaannn/kr1-html-css-shop
+
 Ссылка на живой сайт (GitHub Pages): https://natashaaannn.github.io/kr1-html-css-shop/
 
 ## Постановка контрольной работы №1
