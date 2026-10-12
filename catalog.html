@@ -10,6 +10,7 @@
   <meta property="og:image" content="https://github.io">
   <title>Каталог — SpookyShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -25,7 +26,6 @@
           <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
@@ -35,53 +35,51 @@
       <span class="breadcrumbs__current">Каталог</span>
     </nav>
     
-    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
-      <h1 class="section__title" style="color: var(--color-primary); margin-top: 0;">КАТАЛОГ ТОВАРОВ</h1>
-      <p style="color: #ffdbb5; margin-bottom: 0; line-height: 1.6;">
+    <section class="section section--card">
+      <h1 class="section__title">Каталог товаров</h1>
+      <p class="section__text section__text--inline">
         Добро пожаловать в нашу полную жуткую коллекцию! Здесь собраны лучшие костюмы, декорации ручной работы и сладости для идеальной хэллоуинской вечеринки.
       </p>
     </section>
     
     <div class="catalog-layout">
-      <!-- Левая колонка: Расширенные фильтры -->
       <aside class="catalog-filters">
-        <h2 class="catalog-filters__title" style="color: var(--color-primary); font-size: 20px; margin-top: 0;">Фильтры</h2>
-        <form class="filters-form" action="#" method="get" style="color: #ffdbb5;">
+        <h2 class="catalog-filters__title">Фильтры</h2>
+        <form class="filters-form" action="#" method="get">
           
-          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
-            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Тип товара</legend>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="costumes"> Костюмы и маски</label>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="decor"> Декор и освещение</label>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="makeup"> Грим и эффекты</label>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="type" value="sweets"> Игры и сладости</label>
+          <fieldset class="filters-form__fieldset">
+            <legend class="filters-form__legend">Тип товара</legend>
+            <label class="filters-form__label"><input type="checkbox" name="type" value="costumes"> Костюмы и маски</label>
+            <label class="filters-form__label"><input type="checkbox" name="type" value="decor"> Декор и освещение</label>
+            <label class="filters-form__label"><input type="checkbox" name="type" value="makeup"> Грим и эффекты</label>
+            <label class="filters-form__label"><input type="checkbox" name="type" value="sweets"> Игры и сладости</label>
           </fieldset>
 
-          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
-            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Статус</legend>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="hit"> Хиты продаж</label>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="new"> Новинки</label>
-            <label class="filters-form__label" style="display: block; margin-top: var(--space-xs);"><input type="checkbox" name="status" value="discount"> Со скидкой</label>
+          <fieldset class="filters-form__fieldset">
+            <legend class="filters-form__legend">Статус</legend>
+            <label class="filters-form__label"><input type="checkbox" name="status" value="hit"> Хиты продаж</label>
+            <label class="filters-form__label"><input type="checkbox" name="status" value="new"> Новинки</label>
+            <label class="filters-form__label"><input type="checkbox" name="status" value="discount"> Со скидкой</label>
           </fieldset>
           
-          <fieldset class="filters-form__fieldset" style="border: 1px solid var(--color-border); margin-bottom: var(--space-md); padding: var(--space-md); border-radius: var(--radius-sm);">
-            <legend class="filters-form__legend" style="color: var(--color-primary); font-weight: 700; padding: 0 var(--space-xs);">Цена (руб.)</legend>
-            <label for="price-from" style="display:block; margin-top: var(--space-xs);">От</label>
-            <input class="filters-form__input" id="price-from" type="number" placeholder="0" style="background: #1a1a1a; color: #fff; border: 1px solid var(--color-border); padding: var(--space-xs); width: 100%; border-radius: var(--radius-sm);">
-            <label for="price-to" style="display:block; margin-top: var(--space-sm);">До</label>
-            <input class="filters-form__input" id="price-to" type="number" placeholder="5000" style="background: #1a1a1a; color: #fff; border: 1px solid var(--color-border); padding: var(--space-xs); width: 100%; border-radius: var(--radius-sm);">
+          <fieldset class="filters-form__fieldset">
+            <legend class="filters-form__legend">Цена (руб.)</legend>
+            <label class="filters-form__label" for="price-from">От</label>
+            <input class="filters-form__input" id="price-from" type="number" placeholder="0">
+            <label class="filters-form__label filters-form__label--spaced" for="price-to">До</label>
+            <input class="filters-form__input" id="price-to" type="number" placeholder="5000">
           </fieldset>
-          <button class="button button--primary" type="submit" style="width: 100%;">Применить</button>
+          <button class="button button--primary" type="submit">Применить</button>
         </form>
       </aside>
       
-      <!-- Правая колонка: Витрина из 18 товаров -->
       <section class="catalog-products">
-        <h2 class="catalog-products__title" style="display: none;">Товары</h2>
+        <h2 class="catalog-products__title">Товары</h2>
         <div class="products-grid">
           
           <!-- 1. Маска Крика -->
-          <article class="product-card product-card--vampire">
-            <span class="product-card__badge product-card__badge--hit">ТОП</span>
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--top">ТОП</span>
             <span class="product-card__category">Маски</span>
             <img class="product-card__image" src="images/scream.png" alt="Маска Крика">
             <h3 class="product-card__title">Хоррор-маска Ghostface</h3>
@@ -91,7 +89,7 @@
           </article>
 
           <!-- 2. Костюм скелета -->
-          <article class="product-card product-card--skeleton">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--hit">ХИТ</span>
             <span class="product-card__category">Костюмы</span>
             <img class="product-card__image" src="images/skeleton.png" alt="Костюм скелета">
@@ -102,7 +100,7 @@
           </article>
 
           <!-- 3. Набор шариков Хеллоуин -->
-          <article class="product-card product-card--pumpkin">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--hit">ХИТ</span>
             <span class="product-card__category">Декор</span>
             <img class="product-card__image" src="images/balloon.png" alt="Набор шариков Хеллоуин">
@@ -113,7 +111,7 @@
           </article>
 
           <!-- 4. Костюм привидения -->
-          <article class="product-card product-card--ghost">
+          <article class="product-card">
             <span class="product-card__category">Костюмы</span>
             <img class="product-card__image" src="images/ghost.png" alt="Костюм привидения">
             <h3 class="product-card__title">Костюм привидения</h3>
@@ -123,8 +121,8 @@
           </article>
 
           <!-- 5. Ведьмина метла -->
-          <article class="product-card product-card--witch">
-            <span class="product-card__badge product-card__badge--hit">NEW</span>
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">NEW</span>
             <span class="product-card__category">Аксессуары</span>
             <img class="product-card__image" src="images/broom.png" alt="Ведьмина метла">
             <h3 class="product-card__title">Ведьмина метла</h3>
@@ -134,8 +132,8 @@
           </article>
           
           <!-- 6. Костюм вампира -->
-          <article class="product-card product-card--vampire">
-            <span class="product-card__badge product-card__badge--hit">ТОП</span>
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--top">ТОП</span>
             <span class="product-card__category">Костюмы</span>
             <img class="product-card__image" src="images/vampire.png" alt="Костюм вампира">
             <h3 class="product-card__title">Костюм вампира</h3>
@@ -145,7 +143,7 @@
           </article>
 
           <!-- 7. Скатерть тематическая -->
-          <article class="product-card product-card--witch">
+          <article class="product-card">
             <span class="product-card__category">Декор</span>
             <img class="product-card__image" src="images/tablecloth.png" alt="Скатерть тематическая">
             <h3 class="product-card__title">Скатерть тематическая</h3>
@@ -155,7 +153,7 @@
           </article>
 
           <!-- 8. Шляпа ведьмы -->
-          <article class="product-card product-card--witch">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--discount">-10%</span>
             <span class="product-card__category">Аксессуары</span>
             <img class="product-card__image" src="images/witch.png" alt="Шляпа ведьмы">
@@ -166,7 +164,7 @@
           </article>
 
           <!-- 9. Сумочки для конфет -->
-          <article class="product-card product-card--pumpkin">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--discount">-10%</span>
             <span class="product-card__category">Аксессуары</span>
             <img class="product-card__image" src="images/bag.png" alt="Сумочки для конфет">
@@ -177,8 +175,8 @@
           </article>
 
           <!-- 10. Тыква Джек LED -->
-          <article class="product-card product-card--pumpkin">
-            <span class="product-card__badge product-card__badge--hit">NEW</span>
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">NEW</span>
             <span class="product-card__category">Декор</span>
             <img class="product-card__image" src="images/pumpkin.png" alt="Тыква Джек">
             <h3 class="product-card__title">Тыква Джек LED</h3>
@@ -188,7 +186,7 @@
           </article>
 
           <!-- 11. Игрушка мягкая паук -->
-          <article class="product-card product-card--garland">
+          <article class="product-card">
             <span class="product-card__category">Бутафория</span>
             <img class="product-card__image" src="images/spider.png" alt="Игрушка мягкая паук">
             <h3 class="product-card__title">Игрушка мягкая паук</h3>
@@ -198,7 +196,7 @@
           </article>
 
           <!-- 12. Тюбик искусственной крови -->
-          <article class="product-card product-card--blood">
+          <article class="product-card">
             <span class="product-card__category">Грим</span>
             <img class="product-card__image" src="images/blood.png" alt="Искусственная кровь">
             <h3 class="product-card__title">Тюбик искусственной крови</h3>
@@ -208,7 +206,7 @@
           </article>
 
           <!-- 13. Набор леденцов -->
-          <article class="product-card product-card--blood">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--hit">ХИТ</span>
             <span class="product-card__category">Сладости</span>
             <img class="product-card__image" src="images/candy.png" alt="Набор леденцов">
@@ -219,7 +217,7 @@
           </article>
 
           <!-- 14. Жуткие свечи-призраки -->
-          <article class="product-card product-card--candles">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--discount">-20%</span>
             <span class="product-card__category">Декор</span>
             <img class="product-card__image" src="images/candle.png" alt="Свечи-призраки">
@@ -230,7 +228,7 @@
           </article>
 
           <!-- 15. Клыки вампира -->
-          <article class="product-card product-card--vampire">
+          <article class="product-card">
             <span class="product-card__category">Грим</span>
             <img class="product-card__image" src="images/fangs.png" alt="Клыки вампира">
             <h3 class="product-card__title">Клыки вампира с термоклеем</h3>
@@ -239,9 +237,9 @@
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
-          <!-- 16. Гирлянда Летучие Мыши -->
-          <article class="product-card product-card--garland">
-            <span class="product-card__badge product-card__badge--hit">NEW</span>
+          <!-- 16. ...Гирлянда Летучие Мыши -->
+          <article class="product-card">
+            <span class="product-card__badge product-card__badge--new">NEW</span>
             <span class="product-card__category">Освещение</span>
             <img class="product-card__image" src="images/garland.png" alt="Гирлянда Летучие Мыши">
             <h3 class="product-card__title">Гирлянда Летучие Мыши</h3>
@@ -251,7 +249,7 @@
           </article>
 
           <!-- 17. Букет черных готических роз -->
-          <article class="product-card product-card--witch">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--discount">-15%</span>
             <span class="product-card__category">Декор</span>
             <img class="product-card__image" src="images/roses.png" alt="Черные розы">
@@ -262,7 +260,7 @@
           </article>
 
           <!-- 18. Настольная игра Хоррор -->
-          <article class="product-card product-card--game">
+          <article class="product-card">
             <span class="product-card__badge product-card__badge--discount">-15%</span>
             <span class="product-card__category">Игры</span>
             <img class="product-card__image" src="images/game.png" alt="Настольная игра Хоррор">
@@ -276,10 +274,9 @@
     </div>
   </main>
 
-  <footer class="site-footer" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
-    <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
-      <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
-      <p style="margin: 0; color: #ffdbb5; font-size: 14px;">Разработчик: Захаркина Наталья Дмитриевна | Группа: ЭФБО-04-25</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
     </div>
   </footer>
 

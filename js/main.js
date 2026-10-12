@@ -1,49 +1,64 @@
-const orderDialog = document.getElementById('order-dialog');
-const openDialogButton = document.getElementById('open-callback-dialog');
-const closeDialogButton = document.getElementById('close-order-dialog');
-const orderForm = document.getElementById('order-form');
-const successMessage = document.getElementById('success-message');
+document.addEventListener('DOMContentLoaded', () => {
+  const orderDialog = document.getElementById('order-dialog');
+  const openDialogButton = document.getElementById('open-callback-dialog');
+  const closeDialogButton = document.getElementById('close-order-dialog');
+  const successMessage = document.getElementById('success-message');
 
-// Открытие модального окна обратного звонка
-if (openDialogButton) {
-  openDialogButton.addEventListener('click', () => {
-    orderDialog.showModal();
-  });
-}
-
-// Закрытие модального окна
-if (closeDialogButton) {
-  closeDialogButton.addEventListener('click', () => {
-    orderDialog.close();
-  });
-}
-
-// Базовая HTML/JS валидация формы звонка
-if (orderForm) {
-  orderForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    
-    const formElements = Array.from(orderForm.elements);
-    formElements.forEach((element) => {
-      if (element.willValidate) {
-        element.removeAttribute('aria-invalid');
-      }
+  // Безопасное открытие окна
+  if (openDialogButton && orderDialog) {
+    openDialogButton.addEventListener('click', () => {
+      orderDialog.showModal();
     });
+  }
 
-    if (!orderForm.checkValidity()) {
+  // Безопасное закрытие окна
+  if (closeDialogButton && orderDialog) {
+    closeDialogButton.addEventListener('click', () => {
+      orderDialog.close();
+    });
+  }
+
+  // Абсолютно все формы на сайте
+  const activeForms = document.querySelectorAll('.order-form');
+
+  activeForms.forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Отменяем стандартную перезагрузку страницы
+      
+      const formElements = Array.from(form.elements);
+      
+      // Сбрасываем старые оранжевые рамки ошибок
       formElements.forEach((element) => {
-        if (element.willValidate && !element.checkValidity()) {
-          element.setAttribute('aria-invalid', 'true');
+        if (element.willValidate) {
+          element.removeAttribute('aria-invalid');
         }
       });
-      orderForm.reportValidity();
-      return;
-    }
 
-    if (successMessage) {
-      successMessage.hidden = false;
-    }
-    orderForm.reset();
-    orderDialog.close();
+      //Если поле пустое - предупреждение
+      if (!form.checkValidity()) {
+        formElements.forEach((element) => {
+          if (element.willValidate && !element.checkValidity()) {
+            element.setAttribute('aria-invalid', 'true'); // Включаем оранжевую рамку
+          }
+        });
+        
+        //"Заполните это поле"
+        form.reportValidity(); 
+        return;
+      }
+
+      // Если всё заполнено, показываем зеленый текст успеха
+      const localSuccess = form.nextElementSibling || successMessage;
+      if (localSuccess && localSuccess.classList.contains('success-message')) {
+        localSuccess.hidden = false;
+      }
+
+      form.reset(); // Очищаем ячейки
+
+      // Если форма была внутри модального окна, закрываем его
+      if (orderDialog && orderDialog.hasAttribute('open')) {
+        orderDialog.close();
+      }
+    });
   });
-}
+});

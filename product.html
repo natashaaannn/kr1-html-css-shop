@@ -10,6 +10,7 @@
   <meta property="og:image" content="https://github.io">
   <title>Костюм скелета — SpookyShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -30,71 +31,63 @@
 
   <main class="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a> / 
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
       <span class="breadcrumbs__current">Костюм скелета</span>
     </nav>
     
-    <!-- Основная карточка развернутого товара -->
-    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
-      <div style="display: grid; grid-template-columns: 400px 1fr; gap: var(--space-xl); align-items: start;">
-        
-        <!-- Картинка товара с серой подложкой -->
-        <div style="background-color: #1a1a1a; padding: var(--space-md); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
-          <img src="images/skeleton.png" alt="Костюм скелета" style="width: 100%; height: auto; display: block; border-radius: var(--radius-sm);">
+    <!-- Карточка развернутого товара -->
+    <section class="section section--card">
+      <div class="product-detail">
+
+        <div class="product-detail__image-wrapper">
+          <img class="product-detail__image" src="images/skeleton.png" alt="Костюм скелета">
         </div>
-        
-        <!-- Описание и цена -->
-        <div style="color: #ffdbb5;">
-          <h1 class="section__title" style="color: var(--color-primary); margin-top: 0; font-size: 36px; text-transform: uppercase;">Костюм скелета</h1>
-          <p style="line-height: 1.6; font-size: 16px; margin-bottom: var(--space-lg);">
+
+        <div class="product-detail__info">
+          <h1 class="product-detail__title">Костюм скелета</h1>
+          <p class="product-detail__description">
             Премиальный облегающий комбинезон со зловещим анатомическим принтом костей, который ярко фосфоресцирует в полной темноте. Изготовлен из качественного дышащего эластичного материала, идеально садится по фигуре и не сковывает движения на карнавальной вечеринке. В комплекте идут удобная маска-балаклава и плотные перчатки.
           </p>
-          <p style="font-size: 24px; font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-lg);">
+          <p class="product-detail__price">
             Цена: 2 990 руб.
           </p>
-          <!-- ИСПРАВЛЕНО: Кнопка переименована в Заказать и ведет на 5-ю страницу order.html -->
-          <a class="button button--primary" href="order.html" style="padding: 14px 40px;">Заказать</a>
+          <a class="button button--primary product-detail__button" href="order.html">Заказать</a>
         </div>
       </div>
-      
-      <!-- Table характеристик -->
-      <div style="margin-top: var(--space-xl); border-top: 1px solid var(--color-border); padding-top: var(--space-xl);">
-        <h2 style="color: var(--color-primary); margin-top: 0; text-transform: uppercase; font-size: 20px; letter-spacing: 0.5px;">Технические характеристики</h2>
-        <table style="width: 100%; border-collapse: collapse; margin-top: var(--space-md); color: #ffdbb5; line-height: 2;">
+
+        <table class="product-table">
+          <caption class="catalog-products__title catalog-products__title--hidden">Характеристики Костюма Скелета</caption>
           <thead>
-            <tr style="border-bottom: 2px solid var(--color-border); text-align: left; color: var(--color-primary); font-weight: 700;">
-              <th style="padding: var(--space-sm) 0;">Параметр</th>
-              <th style="padding: var(--space-sm) 0;">Значение</th>
+            <tr class="product-table__row">
+              <th class="product-table__th">Параметр</th>
+              <th class="product-table__th">Значение</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid rgba(255, 106, 0, 0.2);">
-              <td style="padding: var(--space-sm) 0; font-weight: 700;">Материал корпуса</td>
-              <td style="padding: var(--space-sm) 0;">Высококачественный эластан, полиэстер</td>
+            <tr class="product-table__row">
+              <td class="product-table__td product-table__property">Материал корпуса</td>
+              <td class="product-table__td">Высококачественный эластан, полиэстер</td>
             </tr>
-            <tr style="border-bottom: 1px solid rgba(255, 106, 0, 0.2);">
-              <td style="padding: var(--space-sm) 0; font-weight: 700;">Особенности эффекта</td>
-              <td style="padding: var(--space-sm) 0;">Люминесцентное неоновое свечение в темноте</td>
+            <tr class="product-table__row">
+              <td class="product-table__td product-table__property">Особенности эффекта</td>
+              <td class="product-table__td">Люминесцентное неоновое свечение в темноте</td>
             </tr>
-            <tr style="border-bottom: 1px solid rgba(255, 106, 0, 0.2);">
-              <td style="padding: var(--space-sm) 0; font-weight: 700;">Комплектация</td>
-              <td style="padding: var(--space-sm) 0;">Комбинезон, маска-балаклава, перчатки</td>
+            <tr class="product-table__row">
+              <td class="product-table__td product-table__property">Комплектация</td>
+              <td class="product-table__td">Комбинезон, маска-балаклава, перчатки</td>
             </tr>
-            <tr>
-              <td style="padding: var(--space-sm) 0; font-weight: 700;">Рекомендации по уходу</td>
-              <td style="padding: var(--space-sm) 0;">Ручная стирка в прохладной воде</td>
+            <tr class="product-table__row">
+              <td class="product-table__td product-table__property">Рекомендации по уходу</td>
+              <td class="product-table__td">Ручная стирка в прохладной воде</td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </section>
-  </main>
 
-  <footer class="site-footer" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
-    <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
-      <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
-      <p style="margin: 0; color: #ffdbb5; font-size: 14px;">Разработчик: Захаркина Наталья Дмитриевна | Группа: ЭФБО-04-25</p>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
     </div>
   </footer>
 

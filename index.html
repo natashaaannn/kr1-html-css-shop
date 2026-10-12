@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Учебный frontend-проект интернет-магазина.">
+  <meta name="description" content="Магазин жуткого декора SpookyShop: эксклюзивные костюмы, проклятые свечи и бутафория ручной работы на Хэллоуин.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный internet-магазин">
-  <meta property="og:description" content="Учебный frontend-проект internet-магазина.">
-  <meta property="og:image" content="https://github.io">
+  <meta property="og:title" content="SpookyShop — Магазин декора и костюмов на Хэллоуин">
+  <meta property="og:description" content="Закажите эксклюзивный хэллоуинский декор ручной работы и карнавальные костюмы с доставкой до полуночи!">
+  <meta property="og:image" content="https://natashaaannn.github.io/kr1-html-css-shop/">
   <title>SpookyShop</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
@@ -29,7 +29,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="main-content">
     <section class="hero">
       <h1 class="hero__title">Добро пожаловать в SpookyShop!</h1>
       <p class="hero__text">
@@ -40,9 +40,9 @@
       </p>
     </section>
 
-    <section class="section" id="advantages" style="background-color: var(--color-surface-card); padding: var(--space-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl);">
-      <h2 class="section__title" style="color: var(--color-primary); margin-top: 0;">🔮 ПРАВИЛА ХЭЛЛОУИНА</h2>
-      <ul class="section__list" style="color: var(--color-white); line-height: 1.8;">
+    <section class="section section--card" id="advantages">
+      <h2 class="section__title">🔮 ПРАВИЛА ХЭЛЛОУИНА</h2>
+      <ul class="section__list">
         <li>Только оригинальный декор ручной работы</li>
         <li>Безопасный театральный грим, который легко смывается водой</li>
         <li>Быстрая доставка в плотных коробках до наступления полуночи</li>
@@ -54,7 +54,7 @@
       <h2 class="section__title">Популярные товары</h2>
       <div class="products-grid">
         <!-- 1. Костюм скелета -->
-        <article class="product-card product-card--skeleton">
+        <article class="product-card">
           <span class="product-card__badge product-card__badge--hit">ХИТ</span>
           <span class="product-card__category">Костюмы</span>
           <img class="product-card__image" src="images/skeleton.png" alt="Костюм скелета">
@@ -65,7 +65,7 @@
         </article>
 
         <!-- 2. Костюм привидения -->
-        <article class="product-card product-card--ghost">
+        <article class="product-card">
           <span class="product-card__category">Костюмы</span>
           <img class="product-card__image" src="images/ghost.png" alt="Костюм привидения">
           <h3 class="product-card__title">Костюм привидения</h3>
@@ -75,8 +75,8 @@
         </article>
 
         <!-- 3. Костюм вампира -->
-        <article class="product-card product-card--vampire">
-          <span class="product-card__badge product-card__badge--hit">ТОП</span>
+        <article class="product-card">
+          <span class="product-card__badge product-card__badge--top">ТОП</span>
           <span class="product-card__category">Костюмы</span>
           <img class="product-card__image" src="images/vampire.png" alt="Костюм вампира">
           <h3 class="product-card__title">Костюм вампира</h3>
@@ -86,9 +86,9 @@
         </article>
 
         <!-- 4. Шляпа ведьмы -->
-        <article class="product-card product-card--witch">
+        <article class="product-card">
           <span class="product-card__badge product-card__badge--discount">-10%</span>
-          <span class="product-card__category">Accессуары</span>
+          <span class="product-card__category">Аксессуары</span>
           <img class="product-card__image" src="images/witch.png" alt="Шляпа ведьмы">
           <h3 class="product-card__title">Шляпа ведьмы</h3>
           <p class="product-card__description">Остроконечная черная фетровая шляпа с вуалью из кружева и искусственными розами.</p>
@@ -97,8 +97,8 @@
         </article>
 
         <!-- 5. Тыква -->
-        <article class="product-card product-card--pumpkin">
-          <span class="product-card__badge product-card__badge--hit">NEW</span>
+        <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">NEW</span>
           <span class="product-card__category">Декор</span>
           <img class="product-card__image" src="images/pumpkin.png" alt="Тыква Джек">
           <h3 class="product-card__title">Тыква Джек LED</h3>
@@ -108,7 +108,7 @@
         </article>
 
         <!-- 6. Тюбик искусственной крови -->
-        <article class="product-card product-card--blood">
+        <article class="product-card">
           <span class="product-card__category">Грим</span>
           <img class="product-card__image" src="images/blood.png" alt="Искусственная кровь">
           <h3 class="product-card__title">Тюбик искусственной крови</h3>
@@ -118,7 +118,7 @@
         </article>
 
         <!-- 7. Свечи -->
-        <article class="product-card product-card--candles">
+        <article class="product-card">
           <span class="product-card__badge product-card__badge--discount">-20%</span>
           <span class="product-card__category">Декор</span>
           <img class="product-card__image" src="images/candle.png" alt="Свечи-призраки">
@@ -129,8 +129,8 @@
         </article>
 
         <!-- 8. Фиолетовая гирлянда -->
-        <article class="product-card product-card--garland">
-          <span class="product-card__badge product-card__badge--hit">NEW</span>
+        <article class="product-card">
+          <span class="product-card__badge product-card__badge--new">NEW</span>
           <span class="product-card__category">Освещение</span>
           <img class="product-card__image" src="images/garland.png" alt="Гирлянда Летучие Мыши">
           <h3 class="product-card__title">Гирлянда Летучие Мыши</h3>
@@ -140,7 +140,7 @@
         </article>
 
         <!-- 9. Настольная игра -->
-        <article class="product-card product-card--game">
+        <article class="product-card">
           <span class="product-card__badge product-card__badge--discount">-15%</span>
           <span class="product-card__category">Игры</span>
           <img class="product-card__image" src="images/game.png" alt="Настольная игра Хоррор">
@@ -151,17 +151,20 @@
         </article>
       </div>
 
-      <aside class="aside-info" style="margin-top: var(--space-xl); margin-bottom: var(--space-xl);">
+      <aside class="aside-info">
         <h2 class="aside-info__title">Служба поддержки SpookyShop</h2>
         <p class="aside-info__text">
-          Возникли вопросы по подбору карнавального костюма, качеству грима или доставке декора? Наша команда работает круглосуточно, чтобы ваша мистическая вечеринка прошла идеально. Воспользуйтесь удобным разделом на нашей <a href="contacts.html" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">странице Контактов</a>!
+          Возникли вопросы по подбору карнавального костюма, качеству грима или доставке декора? Наша команда работает круглосуточно, чтобы ваша мистическая вечеринка прошла идеально. Воспользуйтесь удобным разделом на нашей <a href="contacts.html" class="aside-info__link">странице Контактов</a>!
         </p>
       </aside>
+    </section>
   </main>
 
-  <footer class="site-footer" style="padding: var(--space-xl) var(--space-lg); margin-top: var(--space-xl);">
-    <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
-      <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
+    </div>
+  </footer>
 
-
-      
+</body>
+</html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru" style="height: 100%;">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Полная форма оформления заказа в магазине SpookyShop.">
   <title>Оформление заказа — SpookyShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
+<body>
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -24,21 +25,19 @@
     </div>
   </header>
 
-  <main class="main-content" style="flex: 1 0 auto;">
+  <main class="main-content">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <span class="breadcrumbs__current">Оформление заказа</span>
     </nav>
     
-    <section class="section" style="background-color: var(--color-surface-card); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border); margin-bottom: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">
-      <h1 class="section__title" style="color: var(--color-primary); margin-top: 0; text-transform: uppercase; margin-bottom: var(--space-xl); text-align: center;">Оформление заказа</h1>
+    <section class="section section--card section--centered-form">
+      <h1 class="section__title section__title--centered">Оформление заказа</h1>
       
-      <!-- Метод GET навсегда убирает ошибку сервера 405 на статичном хостинге -->
-    <form class="order-form" action="#" method="get" style="display: flex; flex-direction: column; gap: 20px; max-width: 100%;">
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="order-select-product" style="color: #ffffff; font-weight: 700; font-size: 14px;">Выберите товар</label>
-          <select class="order-form__select" id="order-select-product" name="product" required
-                  style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; cursor: pointer; font: inherit;">
+      <form class="order-form" id="order-form" action="#" method="get" novalidate>
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-select-product">Выберите товар</label>
+          <select class="order-form__select" id="order-select-product" name="product" required>
             <option value="">Нажмите, чтобы выбрать товар</option>
             <option value="1">Хоррор-маска Ghostface</option>
             <option value="2">Костюм скелета</option>
@@ -61,53 +60,51 @@
           </select>
         </div>
 
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="full-order-name" style="color: #ffffff; font-weight: 700; font-size: 14px;">Ваше имя</label>
-          <input class="order-form__input" id="full-order-name" type="text" name="name" placeholder="Введите имя и фамилию" required 
-                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box;">
+        <div class="order-form__field">
+          <label class="order-form__label" for="full-order-name">Ваше имя</label>
+          <input class="order-form__input" id="full-order-name" type="text" name="name" placeholder="Введите имя и фамилию" required>
         </div>
 
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="full-order-email" style="color: #ffffff; font-weight: 700; font-size: 14px;">E-mail для связи</label>
-          <input class="order-form__input" id="full-order-email" type="email" name="email" placeholder="example@mail.ru" required
-                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box;">
+        <div class="order-form__field">
+          <label class="order-form__label" for="full-order-email">E-mail для связи</label>
+          <input class="order-form__input" id="full-order-email" type="email" name="email" placeholder="example@mail.ru" autocomplete="email" required>
         </div>
 
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="full-order-phone" style="color: #ffffff; font-weight: 700; font-size: 14px;">Контактный телефон</label>
-          <input class="order-form__input" id="full-order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required
-                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box;">
+        <div class="order-form__field">
+          <label class="order-form__label" for="full-order-phone">Контактный телефон</label>
+          <input class="order-form__input" id="full-order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+          <small class="order-form__help">Формат: +7 (900) 000-00-00</small>
         </div>
 
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="full-order-date" style="color: #ffffff; font-weight: 700; font-size: 14px;">Желаемая дата доставки</label>
-          <input class="order-form__input" id="full-order-date" name="date" type="date" required
-                 style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; color-scheme: dark;">
+        <div class="order-form__field">
+          <label class="order-form__label" for="full-order-date">Желаемая дата доставки</label>
+          <input class="order-form__input" id="full-order-date" name="date" type="date" required>
         </div>
 
-        <div class="order-form__field" style="display: flex; flex-direction: column; gap: 8px; text-align: left;">
-          <label class="order-form__label" for="full-order-comment" style="color: #ffffff; font-weight: 700; font-size: 14px;">Комментарий к заказу</label>
-          <textarea class="order-form__textarea" id="full-order-comment" name="comment" rows="4" placeholder="Укажите адрес доставки или примечания к заказу..."
-                    style="background-color: #1a1a1a; color: #ffffff; border: 1px solid var(--color-border); padding: 12px var(--space-md); border-radius: var(--radius-sm); width: 100%; box-sizing: border-box; resize: vertical;"></textarea>
+        <div class="order-form__field">
+          <label class="order-form__label" for="full-order-comment">Комментарий к заказу</label>
+          <textarea class="order-form__textarea" id="full-order-comment" name="comment" rows="4" placeholder="Укажите адрес доставки или примечания к заказу..."></textarea>
         </div>
 
-        <div class="order-form__field-checkbox" style="display: flex; align-items: center; gap: 10px; margin-top: 5px; margin-bottom: 5px;">
-          <input class="order-form__checkbox" id="full-order-agreement" name="agreement" type="checkbox" required style="margin: 0; cursor: pointer; width: auto !important;">
-          <label class="order-form__label" for="full-order-agreement" style="color: #ffdbb5; font-size: 14px; cursor: pointer; margin: 0; text-align: left;">Я согласен на обработку персональных данных</label>
+        <div class="order-form__field-checkbox">
+          <input class="order-form__checkbox" id="full-order-agreement" name="agreement" type="checkbox" required>
+          <label class="order-form__label order-form__label--checkbox" for="full-order-agreement">Я согласен на обработку персональных данных</label>
         </div>
 
-        <button class="button button--primary" type="submit" style="width: 100%; padding: 14px; font-size: 16px; letter-spacing: 1px;">
+        <button class="button button--primary order-form__button--submit" type="submit">
           ПОДТВЕРДИТЬ И ЗАКАЗАТЬ 🔮
         </button>
-
       </form>
+
+      <p class="success-message" id="success-message" hidden>
+        Форма успешно отправлена!
+      </p>
     </section>
   </main>
 
-  <footer class="site-footer" style="padding: var(--space-xl) var(--space-lg); margin-top: auto; flex-shrink: 0;">
-    <div style="max-width: var(--container-width); margin: 0 auto; text-align: center;">
-      <p style="margin: 0 0 var(--space-sm); font-weight: 700;">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
-      <p style="margin: 0; color: #ffdbb5; font-size: 14px;">Разработчик: Захаркина Наталья Дмитриевна | Группа: ЭФБО-04-25</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__copy">&copy; 2026 Магазин SpookyShop. Все права защищены.</p>
     </div>
   </footer>
 
