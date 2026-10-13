@@ -8,7 +8,7 @@
   --color-border-input: #ff6a00;
   --color-surface: #0a0414;
   --color-surface-card: #222222;
-  --color-surface-accent: #222222;
+  --color-surface-accent: #6f666a;
   --color-surface-aside: #222222;
   --color-danger: #ff3366;
   --color-success: #00ff66;
@@ -28,7 +28,6 @@
   --container-width: 1100px;
 }
 
-/* 2. БАЗОВЫЕ СТИЛИ И ГЛОБАЛЬНЫЕ СБРОСЫ */
 * {
   box-sizing: border-box;
 }
@@ -44,6 +43,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+
+
+display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.main-content {
+  flex: 1 0 auto;
 }
 
 header,
@@ -56,7 +65,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 3. ОБЩИЕ ЭЛЕМЕНТЫ ИНТЕРФЕЙСА (Блок БЭМ: button) */
 .button {
   display: inline-block;
   padding: 10px var(--space-md);
@@ -100,7 +108,6 @@ html {
   cursor: not-allowed;
 }
 
-/* 4. КОМПОНЕНТЫ СТРАНИЦЫ (Блоки БЭМ) */
 
 /* Блок шапки сайта */
 .site-header {
@@ -407,7 +414,6 @@ html {
   margin: 0 !important;
 }
 
-/* 5. СТРАНИЦА ОДНОГО ТОВАРА И ТАБЛИЦЫ (product.html) */
 .product-detail {
   display: grid !important;
   grid-template-columns: 400px 1fr !important;
@@ -493,11 +499,11 @@ html {
   color: var(--color-text);
 }
 
-.product-table__row:hover {
-  background-color: var(--color-surface-accent);
+/* Элегантная подсветка строк таблицы при наведении мышки строго по БЭМ */
+.product-table tbody tr:hover {
+  background-color: var(--color-surface-accent) !important;
 }
 
-/* 6. СТРАНИЦА КАТАЛОГА С ФИЛЬТРАМИ (catalog.html) */
 .catalog-layout {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
@@ -524,35 +530,33 @@ html {
   gap: var(--space-md) !important;
 }
 
-/* 🌟 ИСПРАВЛЕНИЕ ЗАГОЛОВКА: Выравнивание на уровне "Фильтры" и высокая выразительность */
 .catalog-products__title {
-  color: var(--color-primary) !important; /* Фирменный яркий оранжевый цвет */
-  margin-top: 0 !important; /* Обнуляем верхний отступ, чтобы встать ровно на уровне "Фильтры" */
+  color: var(--color-primary) !important; 
+  margin-top: 0 !important; 
   margin-bottom: var(--space-xs) !important;
-  font-size: 24px !important; /* Крупный, выразительный размер (как у левого заголовка) */
-  text-transform: uppercase !important; /* Все буквы заглавные */
+  font-size: 24px !important; 
+  text-transform: uppercase !important; 
   letter-spacing: 1px !important;
-  text-shadow: 2px 2px 0px #000000, -2px -2px 0px #000000; /* Черная тень, чтобы надпись не терялась на паутине */
-  text-align: left !important; /* Строгое выравнивание по левому краю своей колонки */
+  text-shadow: 2px 2px 0px #000000, -2px -2px 0px #000000; 
+  text-align: left !important; 
 }
 
 .catalog-products {
   grid-area: products;
 }
 
-/* Перекрашиваем внутренние белые рамки в оранжевый цвет и закругляем углы */
 .filters-form__fieldset {
   border: 1px solid var(--color-border) !important;
-  border-radius: var(--radius-md) !important; /* Красивое скругление рамок подгрупп */
+  border-radius: var(--radius-md) !important; 
   padding: var(--space-md) !important;
   margin-bottom: var(--space-md) !important;
 }
 
-/* Перекрашиваем текст надписей (Тип товара, Статус, Цена) в оранжевый цвет */
+
 .filters-form__legend {
   color: var(--color-primary) !important;
   font-weight: 700 !important;
-  padding: 0 var(--space-xs) !important; /* Безопасные боковые поля вокруг текста */
+  padding: 0 var(--space-xs) !important; 
 }
 
 .filters-form__label {
@@ -561,34 +565,30 @@ html {
 }
 
 .filters-form__input {
-  background-color: #1d1c1f !important; /* Тёмный фон ячейки */
-  color: #ff6a00 !important; /* Оранжевый цвет вводимых цифр */
-  border: 2px solid var(--color-border) !important; /* Оранжевая хэллоуинская рамка */
+  background-color: #1d1c1f !important; 
+  color: #ff6a00 !important; 
+  border: 2px solid var(--color-border) !important; 
   padding: 10px var(--space-sm) !important;
-  border-radius: var(--radius-sm) !important; /* Скругление углов квадратов */
+  border-radius: var(--radius-sm) !important; 
   width: 100% !important;
-  margin-bottom: var(--space-xs) !important; /* Чуть уменьшили нижний отступ, чтобы не раздувать рамку */
+  margin-bottom: var(--space-xs) !important; 
   font-weight: bold !important;
 }
 
-/* Настройка читаемости подсказок внутри оранжевых ячеек */
 .filters-form__input::placeholder {
-  color: rgba(255, 106, 0, 0.6) !important; /* Оранжевый полупрозрачный плейсхолдер */
+  color: rgba(255, 106, 0, 0.6) !important; 
 }
 
-/* Кнопка Применить — Растянута на всю ширину и опущенна ниже рамки цены */
 .filters-form__button {
-  width: 100% !important; /* Кнопка занимает всю ширину панели */
+  width: 100% !important; 
   padding: 12px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
-  margin-top: var(--space-lg) !important; /* Увеличили отступ (space-lg), чтобы кнопка опустилась ниже и не касалась рамки */
-  border-radius: var(--radius-sm) !important; /* Округлили края кнопки */
+  margin-top: var(--space-lg) !important; 
+  border-radius: var(--radius-sm) !important; 
   border: none !important;
 }
 
-
-/* 7. УНИВЕРСАЛЬНЫЕ ФОРМЫ И ТЕМНЫЕ ПОЛЯ (order.html / contacts.html */
 .order-form__field {
   margin-bottom: var(--space-md);
 }
@@ -691,7 +691,6 @@ html {
   background-color: var(--color-success-bg);
 }
 
-/*8. СТРАНИЦА КОНТАКТОВ И ИНТЕРАКТИВНЫЕ ЯНДЕКС.КАРТЫ*/
 .section--card-compact {
   background-color: var(--color-surface-card) !important;
   padding: var(--space-lg) !important;
@@ -722,7 +721,6 @@ html {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* . СТРАНИЦА КОНТАКТОВ И ИНТЕРАКТИВНЫЕ ЯНДЕКС.КАРТЫ */
 .section--card-compact {
   background-color: var(--color-surface-card) !important;
   padding: var(--space-lg) !important;
@@ -753,7 +751,6 @@ html {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
-/*10. КАСКАД СВЕТЛОГО МОДАЛЬНОГО ОКНА ДЛЯ СТРАНИЦЫ КОНТАКТОВ*/
 .order-dialog {
   width: min(100% - 32px, 560px);
   padding: var(--space-lg);
